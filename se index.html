@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masked</title>
+    <style>
+        /* Your CSS styles here */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .search-container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: none;
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            margin-top: 20px;
+        }
+
+        /* Hover effect on the search container */
+        .search-container:hover {
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Highlight input on focus */
+        input[type="text"]:focus {
+            border-color: #4caf50;
+        }
+    </style>
+</head>
+<body>
+
+<div class="search-container">
+    <h1>Masked</h1>
+    <form onsubmit="return handleSearch()">
+        <input type="text" id="searchQuery" name="q" placeholder="Enter your search..." required>
+        <input type="submit" value="Search">
+    </form>
+    <iframe name="searchResults" frameborder="0"></iframe>
+
+    <script>
+        function handleSearch() {
+            var searchQuery = document.getElementById('searchQuery').value.toLowerCase();
+
+            switch (searchQuery) {
+                case 'youtube':
+                    window.location.href = 'https://www.youtube.com/';
+                    break;
+                case 'google':
+                    window.location.href = 'https://www.google.com/';
+                    break;
+                case 'discord':
+                window.location.href = 'https://discord.com/login';
+                
+                case 'spotify':
+                window.location.href = 'https://open.spotify.com/';
+               
+                break;
+               
+              default:
+                   
+                    return true;
+            }
+
+            return false; // Prevent the form from submitting
+        }
+    </script>
+</div>
+
+</body>
+</html>
